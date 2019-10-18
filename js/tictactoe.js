@@ -1,16 +1,16 @@
 //initiallize all variables
 let currentPlayer = "playerOne";
-let currentPlay;
+let currentPlay; //2d position
 let validPlay = false; //boolean
 let endGame = false;
 let playerScore = 0;
-let sizeOfBoard;
+let sizeOfBoard; //input by user
 let $currentPlay;
 let setOfGames = [];
 let winner = '';
-let result;
+let result; //boolean
 let plays = [];
-let singleGame;
+let singleGame; 
 
 
 //will check game status
