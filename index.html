@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/tictactoe.css">
+    <link rel="stylesheet" href="css/fireworks.css">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <script src="js/jquery-1.7.2.js"></script>
+    <script src="js/tictactoe.js"></script>
+    <script src="js/gamelogic.js"></script>
+
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+
+    <!-- Part of fireworks code -->
+    <div class="before"></div>
+    <div class="after"></div>
+
+    <div class="container">
+
+      <nav>
+        <span class="popup" onclick="about()">
+          About
+          <span class="popuptext" id="myPopup">
+            <span class='how'>How to play:</span><br><br>Players alternate placing their markers on the board until either one player has three in a row, horizontally, vertically, or diagonally; or all nine squares are filled.<br>If a player is able to draw three of their markers in a row, then that player wins.
+          </span>
+        </span>
+      </nav>
+
+
+      <header>
+        <h1 class='heartBeat'>Tic-Tac-Toe</h1>
+      </header>
+
+      <h3 class="boardsize">Choose your board size:
+
+        <select>
+          <option value="text">3x3</option>
+          <option value="text">9x9</option>
+        </select>
+
+        <button id="sizeSelect">Select</button>
+      </h3>
+
+      <div class="scores">
+        <div class="playerOne">
+          <h4>Player 1: <span id="playerOneScore">0</span></h4>
+        </div>
+
+        <select id="avatar">
+          <option value="text">noughts vs crosses</option>
+          <option value="text">dogs vs cats</option>
+          <option value="text">water vs fire</option>
+          <option value="text">day vs night</option>
+        </select>
+
+        <div class="playerTwo">
+          <h4>Player 2: <span id="playerTwoScore">0</span></h4>
+        </div>
+      </div>
+
+
+
+      <h2 class="turn">Player 1 starts</h2>
+
+
+
+
+      <div class="boardgame"></div>
+
+
+
+
+      <div class="gameStatus">
+        <h3 class="hidden">GAME OVER</h3>
+        <button id="reset">reset</button>
+      </div>
+
+
+
+      <footer>by Ana Silva 2019</footer>
+
+
+    </div>
+
+  </body>
+</html>

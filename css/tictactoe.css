@@ -1,0 +1,227 @@
+/* * {
+  border: 1px solid white;
+} */
+
+.box {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3b3b3b;
+  margin-top: 0;
+}
+
+.container {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+nav {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+/* Popup container*/
+.how {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.popup {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #555;
+  border-style: none;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 300px;
+  height: 170px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 6px;
+  padding-top: 40px;
+  padding: 30px;
+  position: absolute;
+  z-index: 1;
+  top: 1200%;
+  right: 200%;
+  font-size: 15px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: none;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+  color: #c91df0;
+  font-weight: bold;
+  font-family: 'Rock Salt', cursive;
+  font-size: 40px;
+}
+
+.boardsize {
+  text-align: center;
+}
+
+#sizeSelect {
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.scores {
+  max-width: 500px;
+  margin: 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.playerOne {
+  display: inline-block;
+  min-width: 33%;
+}
+
+select {
+  min-width: 10%;
+  font-size: 15px;
+  padding: 5px;
+  background-color: #555;
+  color: #eee;
+  margin: 10px;
+
+}
+
+.playerTwo {
+  display: inline-block;
+  margin-left: 20px;
+  min-width: 20%;
+}
+
+.scores h4 {
+  margin: 10px;
+  display: inline-block;
+  color: #f7bae9;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+}
+
+#playerOneScore {
+  font-size: 17px;
+  margin-left: 10px;
+  color: #f0fc03;
+}
+
+#playerTwoScore {
+  font-size: 17px;
+  margin-left: 10px;
+  color: #f0fc03;
+}
+
+.turn {
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 30px;
+}
+
+.boardgame {
+  margin: 20px auto;
+  vertical-align: middle;
+  max-width: 550px;
+  max-height: 550px;
+  position: relative;
+  background-color: #3b3b3b;
+  padding: 0px;
+}
+
+.rowBoard {
+  position: relative;
+  width: 550px;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
+
+.columnBoard {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.box {
+  position: center;
+  display: inline-block;
+  background-color: #8a8a8a;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 3px;
+  margin-left: 6px;
+}
+
+.box:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.gameStatus {
+  text-align: center;
+  color: #8a8a8a;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#reset {
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+footer {
+  margin: 40px 40px;
+  font-size: 15px;
+  text-align: right;
+}
