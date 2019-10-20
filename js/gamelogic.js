@@ -17,101 +17,108 @@ const game = {
     return boardGame;
   },
 
-  gamePlays: [], //stores boardGame and after each play, positions will be replaced by P1 or P2
+  gamePlays: [], //stores boardGame and after each play, positions will be replaced by P1 or P2 or Tie
 
-  isWinner: function(game) {
+  isWinner: function(ttt) {
     switch(true) {
-    case game[0] === game[1] && game[1] === game[2]:
+    case ttt[0].toString() === ttt[1].toString() && ttt[1].toString() === ttt[2].toString():
     return true;
     break;
-    case game[3] === game[4] && game[4] === game[5]:
+    case ttt[3].toString() === ttt[4].toString() && ttt[4].toString() === ttt[5].toString():
     return true;
     break;
-    case game[6] === game[7] && game[7] === game[8]:
+    case ttt[6].toString() === ttt[7].toString() && ttt[7].toString() === ttt[8].toString():
     return true;
     break;
-    case game[0] === game[3] && game[3] === game[6]:
+    case ttt[0].toString() === ttt[3].toString() && ttt[3].toString() === ttt[6].toString():
     return true;
     break;
-    case game[1] === game[4] && game[4] === game[7]:
+    case ttt[1].toString() === ttt[4].toString() && ttt[4].toString() === ttt[7].toString():
     return true;
     break;
-    case game[2] === game[5] && game[5] === game[8]:
+    case ttt[2].toString() === ttt[5].toString() && ttt[5].toString() === ttt[8].toString():
     return true;
     break;
-    case game[0] === game[4] && game[4] === game[8]:
+    case ttt[0].toString() === ttt[4].toString() && ttt[4].toString() === ttt[8].toString():
     return true;
     break;
-    case game[2] === game[4] && game[4] === game[6]:
+    case ttt[2].toString() === ttt[4].toString() && ttt[4].toString() === ttt[6].toString():
     return true;
     break;
     default:
     return false;
     }
-    //if it's a tie
+  },
+
+  isTie: function (ttt) {
     let count = 0;
-    for (let i = 0; i < game.length; i++) {
-      if (game[i] === "playerOne" || game[i] === "playerTwo") {
+    for (let i = 0; i < ttt.length; i++) {
+      if (ttt[i].toString() === "playerOne" || ttt[i].toString() === "playerTwo" || ttt[i].toString() === 'Tie') {
         count++;
       }
     }
     if (count === 9) {
-      return 'Tie';
+      winner = "Tie";
+      return true;
+    }
+    else {
+      return false;
     }
   },
 
-
   //checks if game over with winner or tie
-  isGameOver: function (currentPlayer) {
-    console.log('size board', sizeOfBoard);
-    for (let i = 0; i < this.gamePlays.length; i++) {
-      // console.log(this.gamePlays[i]);
-      result = this.isWinner(this.gamePlays[i]);
-      // console.log(result);
-      if (result === true) {
-        this.gamePlays[i] = currentPlayer;
-        singleGame = i;
+  isGameOver: function (currentPlayer, winner) {
+
+    if (sizeOfBoard === 3) {
+      if (this.gamePlays[0].length === 1) {
+        winner = this.gamePlays[0];
+        return true;
+      } else {
+      return false;
       }
     }
 
     if (sizeOfBoard === 9) {
-      result = this.isWinner(this.gamePlays)
-      if (result === true) {
-        winner = currentPlayer;
-        return true;
-      } else if (result === 'Tie'){
-        winner = result;
+      result = this.isWinner(this.gamePlays);
+      if (result) {
+        winner === currentPlayer;
         return true;
       }
+      else if (result === false) {
+        resultTie = this.isTie(this.gamePlays);
+        if (resultTie) {
+          winner = "Tie";
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
     }
-    else if (sizeOfBoard === 3 && (this.gamePlays[0] === 'playerOne' || this.gamePlays[0] === 'playerTwo' || this.gamePlays[0] === 'Tie')) {
-        winner = this.gamePlays[0];
-        return true;
-    }
-    return false;
   },
 
   //checks if valid play, if valid then adds to player array of plays
   isValidPlay: function(currentPlay, currentPlayer, endGame) {
     if (endGame === false) {
       for (let i = 0; i < this.gamePlays.length; i++) {
-        const index = this.gamePlays[i].indexOf(currentPlay);
 
-        if (index >= 0) {
-          const play = this.gamePlays[i][index];
-          if (play === 'playerOne' || play === 'playerTwo' || play === 'Tie') {
-            console.log(`invalid play`);
-            return false;
-          }
-          else {
-          this.gamePlays[i][index] = currentPlayer;
-          console.log("play value is ", this.gamePlays[i][index]);
+        let ttt = [];
+        ttt = this.gamePlays[i];
+        const indexOfPlay = ttt.indexOf(currentPlay);
+
+        if (indexOfPlay >= 0) {
+          const play = ttt[indexOfPlay];
+          tttNumber = i;
+          currentTTT = ttt;
+          currentTTT[indexOfPlay] = currentPlayer;
+          console.log("play value is ", currentTTT[indexOfPlay]);
           return true;
-          }
         }
       }
-    }
+    } else {
+    console.log(`invalid play`);
     return false;
+    }
   },
 
   //updates the next player if valid play and game not over
