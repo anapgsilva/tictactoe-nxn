@@ -15,7 +15,7 @@ The players can choose their own marker/avatar from a drop down menu. The score 
 
 #### Board game
 
-<img src="https://anapgsilva.github.io/tictactoe/blob/master/images/ttt.png" width="500">
+<img src="https://anapgsilva.github.io/tictactoe-nxn/images/ttt.png" width="500">
 
 
 #### Game design
