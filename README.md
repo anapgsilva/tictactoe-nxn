@@ -14,8 +14,13 @@ The players can choose their own marker/avatar from a drop down menu. The score 
 
 
 #### Board game
+Example of the 3X3 board size.
+
+<img src="https://anapgsilva.github.io/tictactoe-nxn/images/ttt_3.png" width="500">
+
 Example of the 9X9 board size.
-<img src="https://anapgsilva.github.io/tictactoe-nxn/images/ttt.png" width="500">
+
+<img src="https://anapgsilva.github.io/tictactoe-nxn/images/ttt_9.png" width="500">
 
 
 #### Game design
